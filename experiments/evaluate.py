@@ -41,7 +41,7 @@ from memit.memit_rect_main import apply_memit_rect_to_model
 from AlphaEdit import AlphaEditHyperParams
 from AlphaEdit.AlphaEdit_main import apply_AlphaEdit_to_model, get_cov
 from ZeroUnlearn import ZeroUnlearnHyperParams, apply_unl_to_model 
-from ZeroUnlearn_DG import ZeroUnlearnDGHyperParams, apply_unl_dg_to_model 
+from ZeroUnlearn_GD import ZeroUnlearnGDHyperParams, apply_unl_gd_to_model 
 from rome import ROMEHyperParams, apply_rome_to_model
 from baselines.base_model import BASEHyperParams, apply_base_to_model
 from util import nethook
@@ -62,7 +62,7 @@ ALG_DICT = {
     "GA": (GAHyperParams, apply_ga_to_model),
     "MEND": (MENDHyperParams, MendRewriteExecutor().apply_to_model),
     "ZeroUnlearn": (ZeroUnlearnHyperParams, apply_unl_to_model),
-    "ZeroUnlearn_DG": (ZeroUnlearnDGHyperParams, apply_unl_dg_to_model),
+    "ZeroUnlearn_GD": (ZeroUnlearnGDHyperParams, apply_unl_gd_to_model),
 }
 
 DS_DICT = {
@@ -674,7 +674,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument(
         "--alg_name",
-        choices=["BASE","GA","ZeroUnlearn","ZeroUnlearn_DG","AlphaEdit","MEMIT_rect", "MEMIT_seq","MEMIT_prune", "MEMIT", "ROME", "FT", "MEND","NSE"],
+        choices=["BASE","GA","ZeroUnlearn","ZeroUnlearn_GD","AlphaEdit","MEMIT_rect", "MEMIT_seq","MEMIT_prune", "MEMIT", "ROME", "FT", "MEND","NSE"],
         default="ZeroUnlearn",
         help="Editing algorithm to use. Results are saved in results/<alg_name>/<run_id>, "
         "where a new run_id is generated on each run. "

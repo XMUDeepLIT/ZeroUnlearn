@@ -5,7 +5,7 @@ from util.hparams import HyperParams
 
 
 @dataclass
-class ZeroUnlearnDGHyperParams(HyperParams):
+class ZeroUnlearnGDHyperParams(HyperParams):
     # Method
     model_name: str
     layers: List[int]

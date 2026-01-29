@@ -25,19 +25,19 @@ from .compute_vs import compute_vs
 from .compute_kvs import compute_retain_ks
 from .compute_kvs import compute_retain_vs, compute_retain_hidden_vs
 from .compute_z import compute_z, get_module_input_output_at_words, find_fact_lookup_idx
-from .ZeroUnlearnDGHyperParams import ZeroUnlearnDGHyperParams
+from .ZeroUnlearnGDHyperParams import ZeroUnlearnGDHyperParams
 
 # Cache variable(s)
 CONTEXT_TEMPLATES_CACHE = None
 COV_CACHE = {}
 
 
-def apply_unl_dg_to_model(
+def apply_unl_gd_to_model(
     model: AutoModelForCausalLM,
     tok: AutoTokenizer,
     retain_requests: List[Dict],
     unlearn_requests: List[Dict],
-    hparams: ZeroUnlearnDGHyperParams,
+    hparams: ZeroUnlearnGDHyperParams,
     copy=False,
     return_orig_weights=False,
     cache_template: Optional[str] = None,
@@ -273,7 +273,7 @@ def get_unlearn_project(
     model: AutoModelForCausalLM,
     tok: AutoTokenizer,
     unlearn_requests: List[Dict],
-    hparams: ZeroUnlearnDGHyperParams,
+    hparams: ZeroUnlearnGDHyperParams,
     layer,
     cache_template: Optional[str] = None,
     use_h: bool = False,
@@ -368,7 +368,7 @@ def get_retain_project(
     model: AutoModelForCausalLM,
     tok: AutoTokenizer,
     retain_requests: List[Dict],
-    hparams: ZeroUnlearnDGHyperParams,
+    hparams: ZeroUnlearnGDHyperParams,
     layer,
     cache_template: Optional[str] = None,
 ) -> Dict[str, Tuple[torch.Tensor]]:
@@ -453,7 +453,7 @@ def get_unlearn_project_backup(
     model: AutoModelForCausalLM,
     tok: AutoTokenizer,
     unlearn_requests: List[Dict],
-    hparams: ZeroUnlearnDGHyperParams,
+    hparams: ZeroUnlearnGDHyperParams,
     cache_template: Optional[str] = None,
 ) -> Dict[str, Tuple[torch.Tensor]]:
     """

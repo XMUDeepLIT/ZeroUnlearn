@@ -26,7 +26,7 @@ This ensures that the unlearning process fundamentally projects sensitive knowle
 * **Null Space Projection:** Projects sensitive inputs into a space orthogonal to original representations for thorough removal
 * **Closed-Form Solution:** Derives an optimal transformation matrix analytically, enabling efficient one-step optimization
 * **Few-Shot Capability:** Achieves effective unlearning with only a small number of samples
-* **Gradient-Based Extension:** Includes **ZeroUnlearn-DG**, a gradient-based variant for multi-sample batch unlearning
+* **Gradient-Based Extension:** Includes **ZeroUnlearn-GD**, a gradient-based variant for multi-sample batch unlearning
 * **Utility Preservation:** Maintains model performance on unrelated tasks and general linguistic capabilities
 
 ---
@@ -122,7 +122,7 @@ The following unlearning methods are implemented:
 | Method | Description |
 |:---|:---|
 | `ZeroUnlearn` | Our proposed method with closed-form solution for few-shot unlearning |
-| `ZeroUnlearn_DG` | Gradient-based variant for multi-sample batch unlearning |
+| `ZeroUnlearn_GD` | Gradient-based variant for multi-sample batch unlearning |
 | `GA` | Gradient Ascent baseline |
 | `FT` | Fine-Tuning baseline |
 | `ROME` | Rank-One Model Editing |
@@ -143,7 +143,7 @@ Supported datasets:
 ```
 ZeroUnlearn/
 ├── ZeroUnlearn/          # Main ZeroUnlearn implementation
-├── ZeroUnlearn_DG/       # ZeroUnlearn with gradient descent
+├── ZeroUnlearn_GD/       # ZeroUnlearn with gradient descent
 ├── AlphaEdit/            # AlphaEdit baseline
 ├── memit/                # MEMIT baseline
 ├── rome/                 # ROME baseline

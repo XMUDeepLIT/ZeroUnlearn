@@ -211,14 +211,3 @@ class SSTEval():
 
         return result_dict, stored_generations
 
-if __name__ == '__main__':
-    # Load the tokenizer and model
-    sst_eval = SSTEval(None, None)
-    exit()
-    model_name = 'EleutherAI/gpt-j-6b'
-    tokenizer = AutoTokenizer.from_pretrained(model_name)
-    model = AutoModelForCausalLM.from_pretrained(model_name)
-    model.to('cuda')
-
-    sst_eval = SSTEval(model, tokenizer)
-    correct, incorrect, invalid, total = sst_eval.evaluate(print_logs='True')

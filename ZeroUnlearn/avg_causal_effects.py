@@ -8,11 +8,7 @@ plt.rcParams["mathtext.fontset"] = "dejavuserif"
 arch = "gpt2-xl"
 archname = "GPT-2-XL"
 
-# arch = 'EleutherAI_gpt-j-6B'
-# archname = 'GPT-J-6B'
 
-# arch = 'EleutherAI_gpt-neox-20b'
-# archname = 'GPT-NeoX-20B'
 
 
 class Avg:

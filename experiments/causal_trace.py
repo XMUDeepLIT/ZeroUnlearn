@@ -42,8 +42,6 @@ def main():
         default="gpt2-xl",
         choices=[
             "gpt2-xl",
-            "EleutherAI/gpt-j-6B",
-            "EleutherAI/gpt-neox-20b",
             "gpt2-large",
             "gpt2-medium",
             "gpt2",

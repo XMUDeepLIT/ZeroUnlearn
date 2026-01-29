@@ -224,26 +224,3 @@ class RTEEval():
 
         return result_dict, stored_generations
 
-if __name__ == '__main__':
-    '''dataset = load_dataset("glue", "rte")
-    eval_dataset = dataset['train']
-
-    count = 0
-    for example in eval_dataset:
-        print(example)
-        print()
-
-    exit()'''
-
-
-    # Load the tokenizer and model
-    model_name = 'EleutherAI/gpt-j-6b'
-    #model_name = 'gpt2-xl'
-    #model_name = '/data/akshat/lingua-models/Llama-2-7b-hf'
-    print(model_name)
-    tokenizer = AutoTokenizer.from_pretrained(model_name)
-    model = AutoModelForCausalLM.from_pretrained(model_name)
-    model.to('cuda')
-
-    rte_eval = RTEEval(model, tokenizer)
-    rte_eval.evaluate(print_logs='True')

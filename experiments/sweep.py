@@ -95,7 +95,7 @@ if __name__ == "__main__":
         "--alg_name", choices=["MEMIT", "FT", "ROME", "MEND"], required=True
     )
     parser.add_argument(
-        "--model_name", choices=["gpt2-xl", "EleutherAI/gpt-j-6B"], required=True
+        "--model_name", choices=["gpt2-xl"], required=True
     )
     parser.add_argument("--hparams_fname", type=str, required=True)
     parser.add_argument(

@@ -388,8 +388,7 @@ class Covariance(Stat):
     Running computation. Use this when the entire covariance matrix is needed,
     and when the whole covariance matrix fits in the GPU.
 
-    Chan-style numerically stable update of mean and full covariance matrix.
-    Chan, Golub. LeVeque. 1983. http://www.jstor.org/stable/2683386
+    
     """
 
     def __init__(self, state=None):
@@ -1536,7 +1535,6 @@ def pull_key_prefix(prefix, d):
 # We wish to be able to save None (null) values in numpy npz files,
 # yet do so without setting the unsecure 'allow_pickle' flag.  To do
 # that, we will encode null as a special kind of IEEE 754 NaN value.
-# Inspired by https://github.com/zuiderkwast/nanbox/blob/master/nanbox.h
 # we follow the same Nanboxing scheme used in JavaScriptCore
 # (search for JSCJSValue.h#L435), which encodes null values in NaN
 # as the NaN value with hex pattern 0xfff8000000000002.

@@ -223,16 +223,3 @@ class MRPCEval():
 
         return result_dict, stored_generations
 
-if __name__ == '__main__':
-    # Load the tokenizer and model
-    #model_name = 'EleutherAI/gpt-j-6b'
-    #model_name = 'gpt2-xl'
-    model_name = '/data/akshat/lingua-models/Llama-2-7b-hf'
-    tokenizer = AutoTokenizer.from_pretrained(model_name)
-    model = AutoModelForCausalLM.from_pretrained(model_name)
-    model.to('cuda')
-
-    mrpc_eval = MRPCEval(model, tokenizer)
-    mrpc_eval.evaluate(print_logs='True')
-    
-    

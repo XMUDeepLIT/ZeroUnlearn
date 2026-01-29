@@ -280,7 +280,7 @@ def main(
             cache_c = torch.zeros((edit_num, W_out.shape[0], W_out.shape[0]), device="cpu")
             if alg_name == "AlphaEdit":
                 P = torch.zeros((edit_num, W_out.shape[0], W_out.shape[0]), device="cpu")
-        elif hparams.model_name in ["EleutherAI_gpt-j-6B","Llama3-8B","phi-1.5","Qwen3-4B","Llama-3.2-3B-Instruct","Llama-3.1-8B-Instruct"]:
+        elif hparams.model_name in ["Llama3-8B","phi-1.5","Qwen3-4B","Llama-3.2-3B-Instruct","Llama-3.1-8B-Instruct"]:
             cache_c = torch.zeros((edit_num, W_out.shape[1], W_out.shape[1]), device="cpu")
             if alg_name == "AlphaEdit":
                 P = torch.zeros((edit_num, W_out.shape[1], W_out.shape[1]), device="cpu")

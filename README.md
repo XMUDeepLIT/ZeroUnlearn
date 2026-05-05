@@ -8,7 +8,7 @@
   <img src="./images/ZeroUnlearn.png" width="90%" alt="ZeroUnlearn Framework"/>
 </p>
 
-Large language models (LLMs) trained on extensive web corpora inevitably acquire and retain sensitive, private, or outdated information. The ability to selectively remove specific knowledge—known as *machine unlearning*—has become critical for responsible LLM deployment, particularly for compliance with privacy regulations, content moderation, and factual updates.
+Machine unlearning has become critical for responsible LLM deployment, particularly for compliance with privacy regulations, content moderation, and factual updates.
 
 **ZeroUnlearn** is a novel framework designed for **few-shot knowledge unlearning** in LLMs. Unlike existing approaches that either require prohibitively expensive full retraining or suffer from catastrophic forgetting through aggressive fine-tuning (e.g., gradient ascent), ZeroUnlearn repurposes knowledge editing techniques to achieve precise unlearning.
 
